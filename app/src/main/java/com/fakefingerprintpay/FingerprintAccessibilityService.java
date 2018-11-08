@@ -76,10 +76,10 @@ public class FingerprintAccessibilityService extends AccessibilityService {
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
         int eventType = event.getEventType();
-        String pkgName = event.getPackageName().toString();
+        final String pkgName = event.getPackageName().toString();
         String className = event.getClassName().toString();
 //        Toast.makeText(getApplicationContext(), className, Toast.LENGTH_SHORT).show();//测试classname
-        AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();
+        final AccessibilityNodeInfo nodeInfo = getRootInActiveWindow();
         switch (pkgName) {
 //            case "com.fakefingerprintpay":
             case Appsinfo.alipayPkg:
@@ -110,9 +110,15 @@ public class FingerprintAccessibilityService extends AccessibilityService {
                     List<AccessibilityNodeInfo> input = findNodeById(Appsinfo.wechatInput, nodeInfo);
                     if (input != null && input.size() > 0)
                         if (flag) {
-                            flag = false;
-                            operatingPkg = pkgName;
+                            new Timer().schedule(new TimerTask() {
+                                @Override
+                                public void run() {
+                                    flag = false;
+                                    operatingPkg = pkgName;
 //                            showFingerprintDialog();
+
+                                }
+                            }, 2000);
                         }
                 }
                 break;

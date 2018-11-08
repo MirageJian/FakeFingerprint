@@ -2,7 +2,7 @@ package com.fakefingerprintpay.infos;
 
 public class Appsinfo {
     public static final String alipayPkg = "com.eg.android.AlipayGphone";
-    public static final String alipayTrigger = "com.alipay.android.app.flybird.ui.window.FlyBirdWindowActivity";
+    public static final String alipayTrigger = "com.alipay.android.msp.ui.views.MspContainerActivity";
     public static final String alipayInput = "com.alipay.android.phone.safepaybase:id/spwd_input";
     public static final String alipayInput2 = "com.alipay.android.app:id/simplePwdLayout";
     public static final String[] alipayPad = new String[]{
@@ -33,9 +33,9 @@ public class Appsinfo {
             "com.taobao.taobao:id/key_num_9"
     };
     public static final String wechatPkg = "com.tencent.mm";
-    public static final String wechatTrigger = "com.tencent.mm.plugin.wallet_core.ui.m";
-    public static final String wechatInput = "com.tencent.mm:id/ckg";
-    public static final String wechatTest = "com.tencent.mm:id/a9p";
+    public static final String wechatTrigger = "com.tencent.mm.plugin.wallet_core.ui.o";
+    public static final String wechatInput = "com.tencent.mm:id/c7v";
+    public static final String wechatTest = "com.tencent.mm:id/agu";
     public static final String[] wechatPad = new String[]{
             "0",
             "1",
